@@ -1,2 +1,3 @@
-# HF-conditions
-A personalized website for HF conditions based on the propagation information and cluster
+# HF Conditions
+
+A personalized website for HF conditions based on propagation information and cluster data.
