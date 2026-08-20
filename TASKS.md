@@ -8,7 +8,12 @@ off as they land; keep this file in sync with reality rather than the plan doc.
       `scripts/`, `.github/workflows/`, `tests/`), root `tsconfig`/`package.json`,
       `AGENTS.md`, `SPEC.md`, `DEVIATIONS.md`, `README.md`. Verified: `npm install`,
       `npm run typecheck`, `npm audit` all clean.
-- [ ] 2. `packages/shared`: Zod schemas for spot, aggregate, solar, conditions matrix, health.
+- [x] 2. `packages/shared`: Zod schemas for spot, aggregate, solar, conditions matrix, health.
+      Also added band/region/operating-mode/grid/QTH schemas these depend on, an
+      `eslint.config.js` (missing since step 1), and `tests/tsconfig.json` +
+      `vitest.config.ts` so tests type-check without vitest double-running
+      tsc's emitted `dist/tests` output. Verified: `npm run typecheck`,
+      `npm run lint`, `npm test` (18 tests), `npm audit` all clean.
 - [ ] 3. `packages/core`: Maidenhead conversion, great-circle distance, band classification,
       `RegionResolver` interface + DXCC/CTY-based implementation, recency/locality/direction
       weighting, evidence formulas, solar/path modifiers, confidence, trend. Pure,

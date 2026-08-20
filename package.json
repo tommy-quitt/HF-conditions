@@ -14,10 +14,12 @@
     "collect": "tsx scripts/collect.ts"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
     "@types/node": "^24.0.0",
     "eslint": "^9.9.0",
     "tsx": "^4.19.0",
     "typescript": "^5.6.0",
+    "typescript-eslint": "^8.67.0",
     "vitest": "^4.1.0"
   }
 }

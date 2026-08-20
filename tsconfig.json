@@ -3,6 +3,7 @@
   "references": [
     { "path": "packages/shared" },
     { "path": "packages/core" },
-    { "path": "packages/data-io" }
+    { "path": "packages/data-io" },
+    { "path": "tests" }
   ]
 }
