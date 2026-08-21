@@ -30,5 +30,15 @@
     "uniqueStationCount": 1,
     "uniquePathCount": 1,
     "averageSnr": 6
+  },
+  {
+    "bucketStart": "2026-08-21T18:00:00.000Z",
+    "bucketEnd": "2026-08-21T18:05:00.000Z",
+    "source": "dxCluster",
+    "band": "17m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.07200415515730643,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
   }
 ]
