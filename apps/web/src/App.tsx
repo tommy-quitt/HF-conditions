@@ -1,13 +1,20 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { computeConditions, resolveQthInput, trend } from "@hf-conditions/core";
-import type { ConditionCell, ConditionsResponse, Qth } from "@hf-conditions/shared";
+import type { ConditionCell, ConditionsResponse, Qth, SpotAggregateBucket } from "@hf-conditions/shared";
 import { ConditionsMatrix } from "./components/ConditionsMatrix.js";
 import { DegradedBanner } from "./components/DegradedBanner.js";
 import { DetailPanel } from "./components/DetailPanel.js";
 import { QthPrompt } from "./components/QthPrompt.js";
 import { fetchEvidence, type Evidence } from "./fetch-evidence.js";
+import { fetchLivePskReporterBuckets, mergeLivePskReporterBuckets } from "./live-pskreporter-evidence.js";
 import { loadStoredGrid, storeGrid } from "./qth-storage.js";
 import { lookupPreviousScore, recordScores } from "./score-history.js";
+
+// EXPERIMENTAL - see DEVIATIONS.md: "live" means PSKReporter evidence was
+// just fetched for the viewer's own grid; "fallback" means the live query
+// didn't succeed and the collector's fixed-home-grid snapshot is shown
+// instead; "loading" is the brief window before the first attempt resolves.
+type LivePskReporterStatus = "loading" | "live" | "fallback";
 
 // SPEC.md §25: "Live page refresh: every five minutes."
 const REFRESH_INTERVAL_MS = 5 * 60 * 1000;
@@ -28,6 +35,8 @@ export function App(): React.ReactElement {
   const [fetchError, setFetchError] = useState<string | null>(null);
   const [selectedCell, setSelectedCell] = useState<ConditionCell | null>(null);
   const [now, setNow] = useState(() => new Date());
+  const [livePskStatus, setLivePskStatus] = useState<LivePskReporterStatus>("loading");
+  const [livePskBuckets, setLivePskBuckets] = useState<SpotAggregateBucket[] | null>(null);
 
   const handleQthResolved = useCallback((resolved: Qth) => {
     setQth(resolved);
@@ -60,9 +69,45 @@ export function App(): React.ReactElement {
     };
   }, []);
 
+  // EXPERIMENTAL (DEVIATIONS.md): re-queries PSKReporter for the viewer's
+  // own grid whenever the QTH changes and on the same refresh cadence as
+  // the rest of the evidence. Runs as its own effect (rather than folding
+  // into the fetchEvidence effect above) because it depends on `qth`, which
+  // that effect deliberately doesn't - see AGENTS.md on isolating each
+  // source's failure from the others.
+  useEffect(() => {
+    if (!qth) return;
+    const currentQth = qth;
+    let cancelled = false;
+
+    async function load(): Promise<void> {
+      try {
+        const buckets = await fetchLivePskReporterBuckets(currentQth);
+        if (!cancelled) {
+          setLivePskBuckets(buckets);
+          setLivePskStatus(buckets === null ? "fallback" : "live");
+        }
+      } catch {
+        if (!cancelled) {
+          setLivePskBuckets(null);
+          setLivePskStatus("fallback");
+        }
+      }
+    }
+
+    setLivePskStatus("loading");
+    void load();
+    const interval = window.setInterval(() => void load(), REFRESH_INTERVAL_MS);
+    return () => {
+      cancelled = true;
+      window.clearInterval(interval);
+    };
+  }, [qth]);
+
   const conditions = useMemo<ConditionsResponse | null>(() => {
     if (!qth || !evidence) return null;
-    const base = computeConditions({ qth, solar: evidence.solar, buckets: evidence.buckets, now });
+    const buckets = mergeLivePskReporterBuckets(evidence.buckets, livePskBuckets);
+    const base = computeConditions({ qth, solar: evidence.solar, buckets, now });
     // SPEC.md §21: trend vs. the score 15 minutes ago - computeConditions
     // itself always returns trend: null (it has no history to consult), so
     // this layers score-history.ts's browser-local history on top of the
@@ -73,7 +118,7 @@ export function App(): React.ReactElement {
       return previousScore === null ? cell : { ...cell, trend: trend(cell.score, previousScore) };
     });
     return { ...base, conditions: conditionsWithTrend };
-  }, [qth, evidence, now]);
+  }, [qth, evidence, now, livePskBuckets]);
 
   useEffect(() => {
     if (qth && conditions) recordScores(qth, conditions.conditions, now);
@@ -97,6 +142,14 @@ export function App(): React.ReactElement {
               Solar Flux: {evidence.solar.f107} | Kp: {evidence.solar.kp}
             </>
           )}
+        </p>
+        <p className="app-subheader app-experiment-note">
+          PSKReporter:{" "}
+          {livePskStatus === "live"
+            ? "live for your QTH (experimental)"
+            : livePskStatus === "loading"
+              ? "querying your QTH…"
+              : "showing collector snapshot (live query unavailable)"}
         </p>
       </header>
 

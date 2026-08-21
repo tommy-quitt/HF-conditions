@@ -11,3 +11,4 @@ apps/web/public/data/
 *.log
 *.tsbuildinfo
 .DS_Store
+.claude/
