@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-08-21T17:17:25.393Z",
+  "sources": [
+    {
+      "source": "noaa",
+      "status": "connected",
+      "lastObservationAt": "2026-08-21T12:00:00Z",
+      "eventsLastFiveMinutes": 1
+    },
+    {
+      "source": "pskReporter",
+      "status": "disconnected",
+      "lastObservationAt": null,
+      "eventsLastFiveMinutes": 0
+    },
+    {
+      "source": "dxCluster",
+      "status": "connected",
+      "lastObservationAt": "2026-08-21T17:17:22.000Z",
+      "eventsLastFiveMinutes": 127
+    },
+    {
+      "source": "rbn",
+      "status": "connected",
+      "lastObservationAt": "2026-08-21T17:18:00.000Z",
+      "eventsLastFiveMinutes": 234
+    }
+  ]
+}
