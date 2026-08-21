@@ -8,5 +8,15 @@
     "weightedSpotCount": 1.82262250760518,
     "uniqueStationCount": 2,
     "uniquePathCount": 2
+  },
+  {
+    "bucketStart": "2026-08-21T19:20:00.000Z",
+    "bucketEnd": "2026-08-21T19:25:00.000Z",
+    "source": "dxCluster",
+    "band": "20m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.9731150286655016,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
   }
 ]
