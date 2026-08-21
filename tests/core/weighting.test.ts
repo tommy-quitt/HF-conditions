@@ -20,12 +20,12 @@ describe("localityWeight", () => {
     expect(localityWeight(0)).toBeCloseTo(1.0, 4);
   });
 
-  it("decreases with distance and reaches 0 beyond 4000km", () => {
+  it("decreases with distance and reaches 0 beyond 1200km", () => {
     const near = localityWeight(300);
     const far = localityWeight(800);
     expect(near).toBeGreaterThan(far);
     expect(far).toBeGreaterThan(0);
-    expect(localityWeight(4000.1)).toBe(0);
+    expect(localityWeight(1200.1)).toBe(0);
   });
 });
 
@@ -43,6 +43,6 @@ describe("spotWeight", () => {
   });
 
   it("is 0 once distance exceeds the locality cutoff regardless of recency", () => {
-    expect(spotWeight({ distanceKm: 4001, ageMinutes: 0, direction: "outboundFromQth" })).toBe(0);
+    expect(spotWeight({ distanceKm: 1300, ageMinutes: 0, direction: "outboundFromQth" })).toBe(0);
   });
 });

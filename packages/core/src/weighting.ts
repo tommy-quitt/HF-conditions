@@ -8,14 +8,11 @@ export function recencyWeight(ageMinutes: number): number {
   return Math.pow(0.5, ageMinutes / RECENCY_HALF_LIFE_MINUTES);
 }
 
-// SPEC.md §8: "Make both 600 and 1200 configuration constants." SPEC.md's
-// own suggested 1200km cutoff turned out too tight in practice: a live
-// collection run against a real (sparsely-populated-nearby) QTH found real
-// DX Cluster spots just outside it (closest was 1,299km away) that should
-// count as "local" evidence (DEVIATIONS.md). Raised to 4000km based on that
-// observation - still configurable, not a hardcoded assumption.
+// SPEC.md §8: "Make both 600 and 1200 configuration constants." Briefly
+// raised to 4000km, then reverted back to SPEC.md's own suggested value
+// (DEVIATIONS.md has the full back-and-forth and why).
 export const LOCALITY_SIGMA_KM = 600;
-export const LOCALITY_MAX_KM = 4000;
+export const LOCALITY_MAX_KM = 1200;
 
 export function localityWeight(distanceKm: number): number {
   if (distanceKm < 0 || distanceKm > LOCALITY_MAX_KM) return 0;
