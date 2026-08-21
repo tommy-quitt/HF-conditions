@@ -38,7 +38,7 @@ describe("resolveSpotLocality", () => {
   });
 
   it("returns null when neither endpoint is within range", () => {
-    const spot = makeSpot({ txLat: -33.9, txLon: 151.2, rxLat: 51.0, rxLon: 10.0 }); // Sydney <-> Germany
+    const spot = makeSpot({ txLat: -33.9, txLon: 151.2, rxLat: 34.0, rxLon: -118.2 }); // Sydney <-> Los Angeles
     expect(resolveSpotLocality(spot, QTH)).toBeNull();
   });
 
