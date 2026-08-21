@@ -1,5 +1,6 @@
 import type { ConditionCell } from "@hf-conditions/shared";
 import { REGION_LABELS } from "../lib/region-labels.js";
+import { TREND_ARROWS, TREND_LABELS } from "../lib/trend-display.js";
 
 const SOURCE_LABELS = {
   pskReporter: "PSKReporter",
@@ -32,6 +33,9 @@ export function DetailPanel({
         </p>
         <p className="detail-confidence">
           Confidence: {cell.confidenceLabel} ({cell.confidence})
+        </p>
+        <p className="detail-trend">
+          Trend: {cell.trend ? `${TREND_ARROWS[cell.trend]} ${TREND_LABELS[cell.trend]}` : "not enough history yet"}
         </p>
         <dl className="detail-components">
           {(Object.keys(SOURCE_LABELS) as (keyof typeof SOURCE_LABELS)[]).map((source) => {

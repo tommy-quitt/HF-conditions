@@ -2,6 +2,7 @@ import { BAND_VALUES, REGION_VALUES } from "@hf-conditions/shared";
 import type { ConditionCell } from "@hf-conditions/shared";
 import { REGION_LABELS } from "../lib/region-labels.js";
 import { scoreColor } from "../lib/score-color.js";
+import { TREND_ARROWS, TREND_LABELS } from "../lib/trend-display.js";
 
 // SPEC.md §4: the conditions matrix is the main product. Every cell shows
 // its numerical score as text - color is a secondary cue only (§4/§5).
@@ -40,9 +41,14 @@ export function ConditionsMatrix({
                     className="score-cell"
                     style={{ borderColor: scoreColor(cell.label) }}
                     onClick={() => onSelect(cell)}
-                    aria-label={`${band} to ${REGION_LABELS[region]}: ${cell.score}, ${cell.label}, ${cell.confidenceLabel} confidence`}
+                    aria-label={`${band} to ${REGION_LABELS[region]}: ${cell.score}, ${cell.label}, ${cell.confidenceLabel} confidence${
+                      cell.trend ? `, ${TREND_LABELS[cell.trend]}` : ""
+                    }`}
                   >
-                    <span className="score-value">{cell.score}</span>
+                    <span className="score-value">
+                      {cell.score}
+                      {cell.trend && <span className="score-trend" aria-hidden="true"> {TREND_ARROWS[cell.trend]}</span>}
+                    </span>
                     <span className="score-label">{cell.label}</span>
                   </button>
                 </td>

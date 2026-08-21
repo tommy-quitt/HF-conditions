@@ -60,6 +60,24 @@ body {
   font-size: 0.9rem;
 }
 
+.degraded-banner p {
+  margin: 0;
+}
+
+.degraded-banner p + p {
+  margin-top: 0.25rem;
+}
+
+.score-trend {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.detail-trend {
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
 .fetch-error {
   color: #b3261e;
 }

@@ -1,3 +1,4 @@
+import { pathToFileURL } from "node:url";
 import type { PropagationSpot, SpotSource } from "@hf-conditions/shared";
 import {
   appendAggregateBuckets,
@@ -11,6 +12,7 @@ import { RECENCY_MAX_AGE_MINUTES, bucketSpots, createRegionResolver, maidenheadT
 import { fetchHolyClusterSpots } from "./adapters/holycluster.js";
 import { fetchNoaaSolarObservation } from "./adapters/noaa.js";
 import { fetchPskReporterSpots } from "./adapters/pskreporter.js";
+import { fetchRbnSpots } from "./adapters/rbn.js";
 
 // Entry point run by the GitHub Actions collection workflow (and locally via
 // `npm run collect`). Per DEVIATIONS.md, this script only fetches,
@@ -37,11 +39,24 @@ const REGION_RESOLVER = createRegionResolver({ dxccTable: [] });
 const PSK_REPORTER_WINDOW_MINUTES = 15;
 const HOLYCLUSTER_WINDOW_MINUTES = 15;
 
+// SPEC.md §7.3/DEVIATIONS.md: RBN requires logging in with a real callsign
+// (there's no anonymous/global query like HolyCluster's) - unlike the fixed
+// PSKReporter home grid, there's no sensible hardcoded default here, so RBN
+// collection is skipped (not attempted with a fabricated callsign) when
+// this isn't configured.
+const RBN_CALLSIGN = process.env.HF_RBN_CALLSIGN;
+const RBN_HOST = process.env.HF_RBN_HOST;
+const RBN_PORT = process.env.HF_RBN_PORT ? Number(process.env.HF_RBN_PORT) : undefined;
+const RBN_COLLECT_MS = process.env.HF_RBN_COLLECT_MS ? Number(process.env.HF_RBN_COLLECT_MS) : undefined;
+
 function log(level: "info" | "error", message: string, fields: Record<string, unknown> = {}): void {
   console.log(JSON.stringify({ level, message, timestamp: new Date().toISOString(), ...fields }));
 }
 
-async function collectNoaa(generatedAt: string): Promise<void> {
+// Exported for testing (SPEC.md §30's "stale NOAA data" scenario in
+// particular needs to exercise this fallback path in isolation, without
+// running the whole real collection pipeline main() does).
+export async function collectNoaa(generatedAt: string): Promise<void> {
   const solarPath = resolveDataPath("solar.json", DATA_DIR);
   const healthPath = resolveDataPath("health.json", DATA_DIR);
 
@@ -81,7 +96,7 @@ async function collectNoaa(generatedAt: string): Promise<void> {
 // Shared by every raw-spot source (PSKReporter, DX Cluster, and RBN once it
 // lands): fetch → bucket against the fixed home QTH → append to the rolling
 // aggregate history → report health, all isolated from every other source.
-async function collectSpotSource(
+export async function collectSpotSource(
   generatedAt: string,
   source: SpotSource,
   fetchSpots: () => Promise<PropagationSpot[]>,
@@ -150,9 +165,23 @@ async function main(): Promise<void> {
   await collectSpotSource(generatedAt, "dxCluster", () =>
     fetchHolyClusterSpots({ windowMinutes: HOLYCLUSTER_WINDOW_MINUTES }),
   );
+
+  if (RBN_CALLSIGN) {
+    await collectSpotSource(generatedAt, "rbn", () =>
+      fetchRbnSpots({ callsign: RBN_CALLSIGN, host: RBN_HOST, port: RBN_PORT, collectMs: RBN_COLLECT_MS }),
+    );
+  } else {
+    log("info", "Skipping RBN collection: HF_RBN_CALLSIGN is not configured");
+  }
 }
 
-main().catch((error: unknown) => {
-  log("error", "collect.ts crashed", { error: error instanceof Error ? error.message : String(error) });
-  process.exitCode = 1;
-});
+// Only run main() when this file is executed directly (`npm run collect` /
+// the Actions workflow) - not when tests import collectNoaa/collectSpotSource
+// in isolation.
+const isMain = process.argv[1] !== undefined && pathToFileURL(process.argv[1]).href === import.meta.url;
+if (isMain) {
+  main().catch((error: unknown) => {
+    log("error", "collect.ts crashed", { error: error instanceof Error ? error.message : String(error) });
+    process.exitCode = 1;
+  });
+}

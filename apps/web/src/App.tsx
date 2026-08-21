@@ -1,12 +1,13 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { computeConditions, resolveQthInput } from "@hf-conditions/core";
-import type { ConditionCell, Qth } from "@hf-conditions/shared";
+import { computeConditions, resolveQthInput, trend } from "@hf-conditions/core";
+import type { ConditionCell, ConditionsResponse, Qth } from "@hf-conditions/shared";
 import { ConditionsMatrix } from "./components/ConditionsMatrix.js";
 import { DegradedBanner } from "./components/DegradedBanner.js";
 import { DetailPanel } from "./components/DetailPanel.js";
 import { QthPrompt } from "./components/QthPrompt.js";
 import { fetchEvidence, type Evidence } from "./fetch-evidence.js";
 import { loadStoredGrid, storeGrid } from "./qth-storage.js";
+import { lookupPreviousScore, recordScores } from "./score-history.js";
 
 // SPEC.md §25: "Live page refresh: every five minutes."
 const REFRESH_INTERVAL_MS = 5 * 60 * 1000;
@@ -59,10 +60,24 @@ export function App(): React.ReactElement {
     };
   }, []);
 
-  const conditions = useMemo(() => {
+  const conditions = useMemo<ConditionsResponse | null>(() => {
     if (!qth || !evidence) return null;
-    return computeConditions({ qth, solar: evidence.solar, buckets: evidence.buckets, now });
+    const base = computeConditions({ qth, solar: evidence.solar, buckets: evidence.buckets, now });
+    // SPEC.md §21: trend vs. the score 15 minutes ago - computeConditions
+    // itself always returns trend: null (it has no history to consult), so
+    // this layers score-history.ts's browser-local history on top of the
+    // otherwise-pure orchestrator, rather than teaching packages/core about
+    // localStorage (AGENTS.md: core stays network/storage-free).
+    const conditionsWithTrend = base.conditions.map((cell) => {
+      const previousScore = lookupPreviousScore(qth, cell.band, cell.region, now);
+      return previousScore === null ? cell : { ...cell, trend: trend(cell.score, previousScore) };
+    });
+    return { ...base, conditions: conditionsWithTrend };
   }, [qth, evidence, now]);
+
+  useEffect(() => {
+    if (qth && conditions) recordScores(qth, conditions.conditions, now);
+  }, [conditions, qth, now]);
 
   if (!qth) {
     return <QthPrompt onResolve={handleQthResolved} />;
@@ -85,7 +100,7 @@ export function App(): React.ReactElement {
         </p>
       </header>
 
-      <DegradedBanner health={evidence?.health ?? null} />
+      <DegradedBanner health={evidence?.health ?? null} now={now} />
       {fetchError && <p className="fetch-error">Couldn't refresh conditions: {fetchError}</p>}
 
       {conditions ? (

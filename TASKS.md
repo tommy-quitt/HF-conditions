@@ -101,14 +101,92 @@ off as they land; keep this file in sync with reality rather than the plan doc.
       activity was sparser than PSKReporter's automated FT8 traffic at collection
       time - expected, not a bug). `typecheck`/`lint`/`test` (113 tests)/`build` all
       clean.
-- [ ] 8. RBN short-burst Telnet adapter (~60-90s connect/collect/disconnect per run).
-      **Open risk to validate here**: does `telnet.reversebeacon.net` accept
-      connections from GitHub Actions' shared runner IPs? If not, omit RBN and
-      renormalize per SPEC.md §15, document in `DEVIATIONS.md`.
-- [ ] 9. Confidence, trend history, degraded-source UI states.
-- [ ] 10. `.github/workflows/collect.yml` (schedule + `workflow_dispatch` + Pages deploy)
-      and `ci.yml` (lint/typecheck/test on PRs).
-- [ ] 11. Tests per SPEC.md §30 across all of the above; docs; finalize `DEVIATIONS.md`.
+- [x] 8. RBN short-burst Telnet adapter (`scripts/adapters/rbn.ts`, ~60-90s
+      connect/collect/disconnect per run, configurable via `HF_RBN_COLLECT_MS`).
+      Verified live: connected to `telnet.reversebeacon.net:7000`, confirmed the
+      plain-text login-prompt + spot-stream protocol, and parsed real spot lines
+      (`DX de <skimmer>: <freq>  <call>  <mode>  <SNR> dB  ... <HHMM>Z`). RBN needs
+      a real login callsign (`HF_RBN_CALLSIGN`) - collection is skipped, not
+      attempted with a fake one, when unset. New piece this step: since RBN gives
+      only bare callsigns (no grid/coordinates like PSKReporter/HolyCluster), added
+      `scripts/adapters/callsign-location.ts`, a small ITU/IARU callsign-prefix ->
+      coarse representative-coordinate table (the deferred real DXCC/CTY dataset
+      from step 3 is still deferred; this is a much coarser stand-in scoped to
+      what RBN needs). Ran `npm run collect` live with a real 20s RBN burst: 34
+      real spots collected and normalized (0 bucketed for the KM72/Israel fixed
+      QTH in that sample - expected at this geocoding precision, documented in
+      `DEVIATIONS.md`). **Remaining open risk, documented in `DEVIATIONS.md`**:
+      only verified from a local network, not from an actual GitHub Actions
+      runner - whether Actions' shared IPs are accepted by
+      `telnet.reversebeacon.net` is confirmed only once a real scheduled workflow
+      run happens (step 10); if blocked, the existing per-source try/catch in
+      `collect.ts` already handles it (degraded/disconnected, renormalize) with no
+      further code change needed. `typecheck`/`lint`/`test` (123 tests) all clean.
+- [x] 9. Trend history and degraded-source UI states (confidence itself already
+      landed in step 3/6). Trend (SPEC.md §21) needs "the score 15 minutes ago",
+      but scoring runs client-side per viewer QTH (DEVIATIONS.md), so there's no
+      server table to hold that history - added `apps/web/src/score-history.ts`,
+      a thin, failure-tolerant `localStorage`-backed history scoped per QTH
+      (mirrors `qth-storage.ts`'s pattern), layered on top of the still-pure
+      `computeConditions`/`trend()` in `packages/core` rather than teaching core
+      about browser storage (AGENTS.md). Wired into `App.tsx`: each 5-minute
+      refresh looks up the closest-to-15-minutes-ago score before recording the
+      new one. Added a trend arrow (↑/↓/→) to `ConditionsMatrix` cells and a
+      "Trend: ..." line to `DetailPanel` (`apps/web/src/lib/trend-display.ts`).
+      Also extended `DegradedBanner` to flag when the whole `health.json` run
+      itself is stale (>30 min old - the collector workflow having stopped
+      running, not just one source), addressing SPEC.md §30's "stale NOAA data"
+      test case and the general "never silently show stale data as current"
+      rule (§26) at the run level, not just per-source. Verified the pure
+      history logic (record → lookup within/outside the tolerance window,
+      wrong-band/region miss) with an ad hoc `tsx` script against a stubbed
+      `localStorage` (no jsdom/Playwright in this pass - consistent with there
+      being no unit-test harness for `apps/web` yet, same as step 6).
+      `typecheck`/`lint`/`test` (123 tests)/`build` all clean.
+- [x] 10. `.github/workflows/ci.yml`: typecheck/lint/test/build on every PR and push
+      to `main`. `.github/workflows/collect.yml`: on a `*/15 * * * *` schedule (the
+      ~10-15 min interval DEVIATIONS.md already assumed) plus `workflow_dispatch`,
+      checks out the `data` branch (bootstrapping it as an empty orphan branch on
+      the very first run, since it won't exist yet), seeds `./data` from it so
+      `scripts/collect.ts`'s SPEC.md §26 stale-fallback behavior has something to
+      fall back to, runs the collector, `npm run sync-data`, builds `apps/web`
+      with that data baked into `dist/`, commits the updated JSON back to the
+      `data` branch, and deploys `dist/` to GitHub Pages via
+      `actions/upload-pages-artifact`/`actions/deploy-pages`. `HF_RBN_CALLSIGN` is
+      read from a repo secret (a real callsign, not something to hardcode);
+      `HF_HOME_GRID`/`HF_CONTACT_EMAIL` from optional repo variables. Validated
+      both files parse as well-formed YAML (`python3 -c "yaml.safe_load(...)"`) -
+      **not yet validated with a real workflow run** (needs the repo's Pages
+      source set to "GitHub Actions" and, for RBN, the `HF_RBN_CALLSIGN` secret -
+      both one-time repo settings outside what a local session can configure; see
+      `README.md`'s new Deployment section). That first real run is also this
+      project's actual test of TASKS.md step 8's open risk (whether GitHub
+      Actions' runner IPs are accepted by `telnet.reversebeacon.net`).
+- [x] 11. Tests per SPEC.md §30, docs, finalized `DEVIATIONS.md`. Scoring-side
+      §30 scenarios (excellent/weak/no evidence, missing-source renormalization,
+      high-Kp event, score clamping at 0/100) already had tests from earlier
+      steps; this step filled the remaining gap - `collect.ts`'s own resilience
+      path (SPEC.md §26/§30's "stale NOAA data" scenario and a source's failure
+      being isolated from the others) had no test at all, because `collect.ts`
+      ran `main()` unconditionally at import time. Refactored it to only run
+      `main()` when executed directly (`process.argv[1]` vs. `import.meta.url`),
+      exported `collectNoaa`/`collectSpotSource`, and added
+      `tests/scripts/collect.test.ts` against a temp data directory: NOAA success,
+      NOAA failure-with-prior-data (retains the stale value, marks `degraded`,
+      never zeroed), NOAA failure-with-no-prior-data (`disconnected`), and the
+      same connected/degraded-with-retained-`lastObservationAt` pair for
+      `collectSpotSource`. UI-side §30 scenarios (matrix renders, URL grid param,
+      QTH changes, detail panel, stale/degraded banner) were verified live via
+      Playwright in step 6, plus this step's ad hoc `tsx` check of
+      `score-history.ts`'s trend-lookup logic (step 9) - there's still no
+      committed browser/component test harness for `apps/web` (no jsdom/
+      Playwright dependency retained after those ad hoc checks), which is the
+      one honest gap left open here rather than papered over. Docs: `README.md`
+      now documents local dev commands, every collector env var, and one-time
+      repo setup (Pages source, `HF_RBN_CALLSIGN` secret) the new
+      `collect.yml` workflow needs; `DEVIATIONS.md` covers every adaptation made
+      through step 10. `typecheck`/`lint`/`test` (128 tests)/`build`/`npm audit`
+      all clean.
 
 Full architecture rationale and the two verified feasibility questions (GitHub
 Actions/Pages on the free plan; HolyCluster as an HTTP replacement for DX Cluster
