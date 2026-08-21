@@ -1,6 +1,11 @@
 node_modules/
 dist/
 build/
+# DEVIATIONS.md: the committed JSON data store lives on a dedicated `data`
+# branch, not on `main` - this is where scripts/collect.ts writes locally,
+# and npm run sync-data copies it into apps/web/public/data for local dev.
+/data/
+apps/web/public/data/
 .env
 .env.local
 *.log

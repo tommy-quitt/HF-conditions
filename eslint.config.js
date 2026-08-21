@@ -12,7 +12,7 @@ export default tseslint.config(
     languageOptions: {
       parserOptions: {
         projectService: {
-          allowDefaultProject: ["*.config.js", "vitest.config.ts"],
+          allowDefaultProject: ["*.config.js", "vitest.config.ts", "apps/web/vite.config.ts"],
         },
         tsconfigRootDir: import.meta.dirname,
       },

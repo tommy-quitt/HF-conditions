@@ -9,9 +9,10 @@
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "test": "vitest run",
-    "typecheck": "tsc --build --force",
+    "typecheck": "tsc --build --force && npm run typecheck --workspaces --if-present",
     "lint": "eslint .",
-    "collect": "tsx scripts/collect.ts"
+    "collect": "tsx scripts/collect.ts",
+    "sync-data": "tsx scripts/sync-data.ts"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",

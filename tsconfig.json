@@ -4,6 +4,7 @@
     { "path": "packages/shared" },
     { "path": "packages/core" },
     { "path": "packages/data-io" },
+    { "path": "scripts" },
     { "path": "tests" }
   ]
 }
