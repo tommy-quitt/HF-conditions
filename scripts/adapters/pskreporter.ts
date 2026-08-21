@@ -15,6 +15,14 @@ import { classifyBand, maidenheadToLatLon } from "@hf-conditions/core";
 // without adding an XML dependency.
 const QUERY_URL = "https://retrieve.pskreporter.info/query";
 const JSONP_CALLBACK_NAME = "hfConditionsCollector";
+// DEVIATIONS.md: a 403 from a real GitHub Actions run (unseen locally -
+// datacenter IPs get treated differently than a home network) - PSKReporter's
+// own developer docs ask automated clients to identify themselves via
+// `appcontact` precisely so an operator can tell a legitimate automated
+// client from generic bot traffic. A descriptive User-Agent is the same
+// idea. Neither is guaranteed to fix an ASN-level block, but both are free
+// and exactly what PSKReporter's own docs ask for.
+const USER_AGENT = "HF-Conditions-Collector/1.0 (+https://github.com/tommy-quitt/HF-conditions)";
 const MAX_WINDOW_MINUTES = 24 * 60;
 const MAIDENHEAD_REGEX = /^[A-R]{2}[0-9]{2}([A-X]{2}([0-9]{2})?)?$/;
 
@@ -112,7 +120,9 @@ export async function fetchPskReporterSpots(options: FetchPskReporterOptions): P
   });
   if (options.contactEmail) params.set("appcontact", options.contactEmail);
 
-  const response = await fetch(`${QUERY_URL}?${params.toString()}`);
+  const response = await fetch(`${QUERY_URL}?${params.toString()}`, {
+    headers: { "User-Agent": USER_AGENT },
+  });
   if (!response.ok) {
     throw new Error(`PSKReporter request failed: ${response.status} ${response.statusText}`);
   }

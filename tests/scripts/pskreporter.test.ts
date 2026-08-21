@@ -10,7 +10,7 @@ function jsonpResponse(body: unknown): Response {
   } as Response;
 }
 
-function stubFetch(impl: (url: string) => Promise<Response>): void {
+function stubFetch(impl: (url: string, init?: RequestInit) => Promise<Response>): void {
   vi.stubGlobal("fetch", vi.fn(impl));
 }
 
@@ -97,6 +97,18 @@ describe("fetchPskReporterSpots", () => {
 
     const spots = await fetchPskReporterSpots({ grid: "KM72", windowMinutes: 15 });
     expect(spots[0]?.txGrid).toBe("KN79GO61");
+  });
+
+  it("identifies itself with a descriptive User-Agent (DEVIATIONS.md: a real GitHub Actions run got a 403 without one)", async () => {
+    let sentInit: RequestInit | undefined;
+    stubFetch((_url, init) => {
+      sentInit = init;
+      return Promise.resolve(jsonpResponse({ receptionReport: [] }));
+    });
+
+    await fetchPskReporterSpots({ grid: "KM72", windowMinutes: 15 });
+    const headers = sentInit?.headers as Record<string, string> | undefined;
+    expect(headers?.["User-Agent"]).toContain("HF-Conditions-Collector");
   });
 
   it("throws on a malformed (non-JSONP) response", async () => {
