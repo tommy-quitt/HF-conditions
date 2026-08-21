@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T17:17:25.393Z",
+  "generatedAt": "2026-08-21T17:52:03.223Z",
   "sources": [
     {
       "source": "noaa",
@@ -9,21 +9,21 @@
     },
     {
       "source": "pskReporter",
-      "status": "disconnected",
+      "status": "degraded",
       "lastObservationAt": null,
       "eventsLastFiveMinutes": 0
     },
     {
       "source": "dxCluster",
       "status": "connected",
-      "lastObservationAt": "2026-08-21T17:17:22.000Z",
-      "eventsLastFiveMinutes": 127
+      "lastObservationAt": "2026-08-21T17:52:01.000Z",
+      "eventsLastFiveMinutes": 116
     },
     {
       "source": "rbn",
       "status": "connected",
-      "lastObservationAt": "2026-08-21T17:18:00.000Z",
-      "eventsLastFiveMinutes": 234
+      "lastObservationAt": "2026-08-21T17:53:00.000Z",
+      "eventsLastFiveMinutes": 239
     }
   ]
 }
