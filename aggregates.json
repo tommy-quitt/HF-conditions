@@ -30,5 +30,27 @@
     "uniqueStationCount": 1,
     "uniquePathCount": 1,
     "averageSnr": 14
+  },
+  {
+    "bucketStart": "2026-08-22T04:20:00.000Z",
+    "bucketEnd": "2026-08-22T04:25:00.000Z",
+    "source": "rbn",
+    "band": "20m",
+    "region": "EUROPE",
+    "weightedSpotCount": 1.9324755903037611,
+    "uniqueStationCount": 2,
+    "uniquePathCount": 2,
+    "averageSnr": 17.5
+  },
+  {
+    "bucketStart": "2026-08-22T04:20:00.000Z",
+    "bucketEnd": "2026-08-22T04:25:00.000Z",
+    "source": "rbn",
+    "band": "17m",
+    "region": "EUROPE",
+    "weightedSpotCount": 2.8987133854556415,
+    "uniqueStationCount": 2,
+    "uniquePathCount": 2,
+    "averageSnr": 11.666666666666666
   }
 ]
