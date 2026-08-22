@@ -1,46 +1,5 @@
 [
   {
-    "bucketStart": "2026-08-22T09:00:00.000Z",
-    "bucketEnd": "2026-08-22T09:05:00.000Z",
-    "source": "dxCluster",
-    "band": "20m",
-    "region": "EUROPE",
-    "weightedSpotCount": 0.05717680268020559,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1
-  },
-  {
-    "bucketStart": "2026-08-22T09:05:00.000Z",
-    "bucketEnd": "2026-08-22T09:10:00.000Z",
-    "source": "dxCluster",
-    "band": "20m",
-    "region": "EUROPE",
-    "weightedSpotCount": 0.10129467976074333,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1
-  },
-  {
-    "bucketStart": "2026-08-22T09:10:00.000Z",
-    "bucketEnd": "2026-08-22T09:15:00.000Z",
-    "source": "dxCluster",
-    "band": "20m",
-    "region": "EUROPE",
-    "weightedSpotCount": 0.22908807229377254,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1
-  },
-  {
-    "bucketStart": "2026-08-22T09:10:00.000Z",
-    "bucketEnd": "2026-08-22T09:15:00.000Z",
-    "source": "rbn",
-    "band": "12m",
-    "region": "EUROPE",
-    "weightedSpotCount": 0.9662377951518806,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1,
-    "averageSnr": 13
-  },
-  {
     "bucketStart": "2026-08-22T09:25:00.000Z",
     "bucketEnd": "2026-08-22T09:30:00.000Z",
     "source": "dxCluster",
@@ -163,5 +122,35 @@
     "uniqueStationCount": 1,
     "uniquePathCount": 1,
     "averageSnr": 12
+  },
+  {
+    "bucketStart": "2026-08-22T10:05:00.000Z",
+    "bucketEnd": "2026-08-22T10:10:00.000Z",
+    "source": "dxCluster",
+    "band": "20m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.07200415515730643,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-08-22T10:10:00.000Z",
+    "bucketEnd": "2026-08-22T10:15:00.000Z",
+    "source": "dxCluster",
+    "band": "20m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.10129467976074333,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-08-22T10:15:00.000Z",
+    "bucketEnd": "2026-08-22T10:20:00.000Z",
+    "source": "dxCluster",
+    "band": "20m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.06793991738270912,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
   }
 ]
