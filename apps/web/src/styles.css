@@ -104,7 +104,7 @@ body {
   width: 100%;
   background: var(--panel-bg);
   color: var(--fg);
-  border: 2px solid;
+  border: 3px solid;
   border-radius: 4px;
   padding: 0.3rem 0.2rem;
   cursor: pointer;
