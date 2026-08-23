@@ -1,66 +1,5 @@
 [
   {
-    "bucketStart": "2026-08-23T09:30:00.000Z",
-    "bucketEnd": "2026-08-23T09:35:00.000Z",
-    "source": "dxCluster",
-    "band": "10m",
-    "region": "EUROPE",
-    "weightedSpotCount": 0.7502279571694999,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1
-  },
-  {
-    "bucketStart": "2026-08-23T09:30:00.000Z",
-    "bucketEnd": "2026-08-23T09:35:00.000Z",
-    "source": "dxCluster",
-    "band": "20m",
-    "region": "EUROPE",
-    "weightedSpotCount": 0.7502279571694999,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1
-  },
-  {
-    "bucketStart": "2026-08-23T09:35:00.000Z",
-    "bucketEnd": "2026-08-23T09:40:00.000Z",
-    "source": "dxCluster",
-    "band": "20m",
-    "region": "EUROPE",
-    "weightedSpotCount": 2.2506838715084996,
-    "uniqueStationCount": 3,
-    "uniquePathCount": 3
-  },
-  {
-    "bucketStart": "2026-08-23T09:40:00.000Z",
-    "bucketEnd": "2026-08-23T09:45:00.000Z",
-    "source": "dxCluster",
-    "band": "20m",
-    "region": "EUROPE",
-    "weightedSpotCount": 0.05312120209614994,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1
-  },
-  {
-    "bucketStart": "2026-08-23T09:40:00.000Z",
-    "bucketEnd": "2026-08-23T09:45:00.000Z",
-    "source": "dxCluster",
-    "band": "10m",
-    "region": "EUROPE",
-    "weightedSpotCount": 1.5004559143389997,
-    "uniqueStationCount": 2,
-    "uniquePathCount": 2
-  },
-  {
-    "bucketStart": "2026-08-23T09:40:00.000Z",
-    "bucketEnd": "2026-08-23T09:45:00.000Z",
-    "source": "rbn",
-    "band": "17m",
-    "region": "EUROPE",
-    "weightedSpotCount": 0.9662377951518806,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1,
-    "averageSnr": 20
-  },
-  {
     "bucketStart": "2026-08-23T09:55:00.000Z",
     "bucketEnd": "2026-08-23T10:00:00.000Z",
     "source": "dxCluster",
@@ -133,5 +72,89 @@
     "weightedSpotCount": 0.05014176907689942,
     "uniqueStationCount": 1,
     "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-08-23T10:30:00.000Z",
+    "bucketEnd": "2026-08-23T10:35:00.000Z",
+    "source": "dxCluster",
+    "band": "20m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.09197278500598625,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-08-23T10:35:00.000Z",
+    "bucketEnd": "2026-08-23T10:40:00.000Z",
+    "source": "dxCluster",
+    "band": "20m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.075727204422835,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-08-23T10:40:00.000Z",
+    "bucketEnd": "2026-08-23T10:45:00.000Z",
+    "source": "dxCluster",
+    "band": "10m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.06418915226349407,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-08-23T10:45:00.000Z",
+    "bucketEnd": "2026-08-23T10:50:00.000Z",
+    "source": "dxCluster",
+    "band": "15m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.8945002782238185,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-08-23T10:45:00.000Z",
+    "bucketEnd": "2026-08-23T10:50:00.000Z",
+    "source": "rbn",
+    "band": "17m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.9662377951518806,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1,
+    "averageSnr": 8
+  },
+  {
+    "bucketStart": "2026-08-23T10:45:00.000Z",
+    "bucketEnd": "2026-08-23T10:50:00.000Z",
+    "source": "rbn",
+    "band": "15m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.9662377951518806,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1,
+    "averageSnr": 14
+  },
+  {
+    "bucketStart": "2026-08-23T10:45:00.000Z",
+    "bucketEnd": "2026-08-23T10:50:00.000Z",
+    "source": "rbn",
+    "band": "12m",
+    "region": "EUROPE",
+    "weightedSpotCount": 3.8649511806075223,
+    "uniqueStationCount": 2,
+    "uniquePathCount": 2,
+    "averageSnr": 18.75
+  },
+  {
+    "bucketStart": "2026-08-23T10:45:00.000Z",
+    "bucketEnd": "2026-08-23T10:50:00.000Z",
+    "source": "rbn",
+    "band": "12m",
+    "region": "ASIA",
+    "weightedSpotCount": 0.9662377951518806,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1,
+    "averageSnr": 3
   }
 ]
