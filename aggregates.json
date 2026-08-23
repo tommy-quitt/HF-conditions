@@ -1,13 +1,13 @@
 [
   {
-    "bucketStart": "2026-08-23T02:05:00.000Z",
-    "bucketEnd": "2026-08-23T02:10:00.000Z",
+    "bucketStart": "2026-08-23T03:10:00.000Z",
+    "bucketEnd": "2026-08-23T03:15:00.000Z",
     "source": "rbn",
-    "band": "80m",
-    "region": "EUROPE",
-    "weightedSpotCount": 12.561091336974446,
-    "uniqueStationCount": 12,
-    "uniquePathCount": 12,
-    "averageSnr": 11.76923076923077
+    "band": "20m",
+    "region": "NORTH_AMERICA",
+    "weightedSpotCount": 1.9324755903037611,
+    "uniqueStationCount": 2,
+    "uniquePathCount": 2,
+    "averageSnr": 16
   }
 ]
