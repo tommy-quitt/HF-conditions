@@ -1,27 +1,5 @@
 [
   {
-    "bucketStart": "2026-08-23T08:15:00.000Z",
-    "bucketEnd": "2026-08-23T08:20:00.000Z",
-    "source": "rbn",
-    "band": "20m",
-    "region": "EUROPE",
-    "weightedSpotCount": 3.8649511806075223,
-    "uniqueStationCount": 4,
-    "uniquePathCount": 4,
-    "averageSnr": 17
-  },
-  {
-    "bucketStart": "2026-08-23T08:15:00.000Z",
-    "bucketEnd": "2026-08-23T08:20:00.000Z",
-    "source": "rbn",
-    "band": "17m",
-    "region": "EUROPE",
-    "weightedSpotCount": 1.9324755903037611,
-    "uniqueStationCount": 2,
-    "uniquePathCount": 2,
-    "averageSnr": 11
-  },
-  {
     "bucketStart": "2026-08-23T08:45:00.000Z",
     "bucketEnd": "2026-08-23T08:50:00.000Z",
     "source": "dxCluster",
@@ -40,5 +18,66 @@
     "weightedSpotCount": 0.047809081886534946,
     "uniqueStationCount": 1,
     "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-08-23T09:30:00.000Z",
+    "bucketEnd": "2026-08-23T09:35:00.000Z",
+    "source": "dxCluster",
+    "band": "10m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.7502279571694999,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-08-23T09:30:00.000Z",
+    "bucketEnd": "2026-08-23T09:35:00.000Z",
+    "source": "dxCluster",
+    "band": "20m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.7502279571694999,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-08-23T09:35:00.000Z",
+    "bucketEnd": "2026-08-23T09:40:00.000Z",
+    "source": "dxCluster",
+    "band": "20m",
+    "region": "EUROPE",
+    "weightedSpotCount": 2.2506838715084996,
+    "uniqueStationCount": 3,
+    "uniquePathCount": 3
+  },
+  {
+    "bucketStart": "2026-08-23T09:40:00.000Z",
+    "bucketEnd": "2026-08-23T09:45:00.000Z",
+    "source": "dxCluster",
+    "band": "20m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.05312120209614994,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-08-23T09:40:00.000Z",
+    "bucketEnd": "2026-08-23T09:45:00.000Z",
+    "source": "dxCluster",
+    "band": "10m",
+    "region": "EUROPE",
+    "weightedSpotCount": 1.5004559143389997,
+    "uniqueStationCount": 2,
+    "uniquePathCount": 2
+  },
+  {
+    "bucketStart": "2026-08-23T09:40:00.000Z",
+    "bucketEnd": "2026-08-23T09:45:00.000Z",
+    "source": "rbn",
+    "band": "17m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.9662377951518806,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1,
+    "averageSnr": 20
   }
 ]
