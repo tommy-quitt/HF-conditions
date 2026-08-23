@@ -28,3 +28,13 @@ beyond what `DEVIATIONS.md` already documents.
 - If a real external source behaves differently than this spec assumed, do not work
   around it ad hoc: isolate the discrepancy behind its adapter, document it in
   `DEVIATIONS.md`, and implement the safest practical fallback (spec §37).
+
+## Branching
+
+- One branch per feature/task, branched from `main`. Do not commit directly to `main`
+  and do not mix unrelated work on one branch.
+- Keep branches short-lived: merge as soon as the feature is finished and verified
+  stable (`npm run typecheck`, `npm run lint`, `npm test`, and a build all pass — the
+  same checks CI runs), rather than letting them accumulate unrelated follow-up commits.
+  Open a new branch for the next feature/task instead of continuing to build on an
+  already-merged one.
