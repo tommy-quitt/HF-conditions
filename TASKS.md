@@ -193,3 +193,39 @@ Actions/Pages on the free plan; HolyCluster as an HTTP replacement for DX Cluste
 Telnet) are in the approved plan. If that plan file isn't available in a future
 session, `DEVIATIONS.md` + this file are the durable, in-repo record of the same
 decisions.
+
+## Experiments (not yet merged to `main`)
+
+- [x] `experiment/client-side-pskreporter-query`: attempts to close V1's fixed-
+      `KM72`-grid PSKReporter limitation (see `DEVIATIONS.md`) by also querying
+      PSKReporter directly from the browser for the viewer's own grid, via a real
+      JSONP `<script>` tag (`fetch()` doesn't work - the endpoint sends no CORS
+      headers, confirmed from a real browser origin, not just assumed from
+      Node). Shared the pure query-building/response-normalization logic
+      between the Node collector adapter and the new browser client in
+      `@hf-conditions/core`'s `external/pskreporter-format.ts` (still no
+      network/fs access there - only the transport differs per environment) to
+      avoid duplicating it. On success, the viewer's live-queried buckets fully
+      replace the fixed-grid ones before scoring; on failure, it falls back to
+      the collector's snapshot (never silently shows no PSKReporter evidence),
+      and the UI reports which mode is active. **Verified live**: built and
+      served `apps/web` for real, drove it with an ad hoc Playwright check (not
+      retained as a dependency) against the real `retrieve.pskreporter.info` -
+      the JSONP request succeeds from a real browser origin, ~1s round-trip,
+      real reception reports returned, matrix scores update accordingly.
+      **Open risk, explicitly not claimed as resolved**: only checked from one
+      desktop-Chromium/home-network vantage point - whether this holds for
+      every real visitor (mobile networks, corporate proxies, blockers) is
+      unverified; that's exactly why the fallback path exists. 137 tests (9 new:
+      3 for the shared query-builder/JSONP-unwrap logic, 3 for the browser-side
+      bucket-merge logic, plus assembling `apps/web/src/**/*.test.ts` into the
+      root `vitest.config.ts` for the first time - previously apps/web's pure
+      logic, e.g. `score-history.ts`, was only checked ad hoc, per step 9).
+      `typecheck`/`lint`/`test`/`build` all clean. Also added `.claude/` to
+      `.gitignore` (this session's worktree/job state was showing up as
+      untracked) and `.claude/worktrees/**` to `eslint.config.js`'s ignores (a
+      concurrent agent's worktree was otherwise getting linted as if it were
+      part of this repo). Deliberately deferred: this only touches PSKReporter;
+      RBN/DX Cluster remain collector-side only, since they're already global
+      firehoses rather than grid-scoped (no fixed-QTH limitation to fix for
+      them, per `DEVIATIONS.md`).
