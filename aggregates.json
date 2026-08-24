@@ -1,15 +1,5 @@
 [
   {
-    "bucketStart": "2026-08-24T21:55:00.000Z",
-    "bucketEnd": "2026-08-24T22:00:00.000Z",
-    "source": "dxCluster",
-    "band": "20m",
-    "region": "EUROPE",
-    "weightedSpotCount": 0.8980472384746959,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1
-  },
-  {
     "bucketStart": "2026-08-24T22:00:00.000Z",
     "bucketEnd": "2026-08-24T22:05:00.000Z",
     "source": "dxCluster",
