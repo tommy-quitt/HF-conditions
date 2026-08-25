@@ -8,5 +8,37 @@
     "weightedSpotCount": 0.03625955063177548,
     "uniqueStationCount": 1,
     "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-08-25T22:15:00.000Z",
+    "bucketEnd": "2026-08-25T22:20:00.000Z",
+    "source": "dxCluster",
+    "band": "40m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.34315969725662193,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 2
+  },
+  {
+    "bucketStart": "2026-08-25T22:20:00.000Z",
+    "bucketEnd": "2026-08-25T22:25:00.000Z",
+    "source": "rbn",
+    "band": "20m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.9662377951518806,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1,
+    "averageSnr": 12
+  },
+  {
+    "bucketStart": "2026-08-25T22:20:00.000Z",
+    "bucketEnd": "2026-08-25T22:25:00.000Z",
+    "source": "rbn",
+    "band": "20m",
+    "region": "NORTH_AMERICA",
+    "weightedSpotCount": 1.9324755903037611,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1,
+    "averageSnr": 21.5
   }
 ]
