@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T21:39:51.999Z",
+  "generatedAt": "2026-08-25T21:57:51.687Z",
   "sources": [
     {
       "source": "noaa",
@@ -16,14 +16,14 @@
     {
       "source": "dxCluster",
       "status": "connected",
-      "lastObservationAt": "2026-08-25T21:39:50.000Z",
-      "eventsLastFiveMinutes": 105
+      "lastObservationAt": "2026-08-25T21:57:36.000Z",
+      "eventsLastFiveMinutes": 102
     },
     {
       "source": "rbn",
       "status": "connected",
-      "lastObservationAt": "2026-08-25T21:41:00.000Z",
-      "eventsLastFiveMinutes": 325
+      "lastObservationAt": "2026-08-25T21:59:00.000Z",
+      "eventsLastFiveMinutes": 238
     }
   ]
 }
