@@ -53,5 +53,16 @@
     "uniqueStationCount": 1,
     "uniquePathCount": 1,
     "averageSnr": 21
+  },
+  {
+    "bucketStart": "2026-08-26T09:20:00.000Z",
+    "bucketEnd": "2026-08-26T09:25:00.000Z",
+    "source": "rbn",
+    "band": "12m",
+    "region": "EUROPE",
+    "weightedSpotCount": 2.8987133854556415,
+    "uniqueStationCount": 2,
+    "uniquePathCount": 2,
+    "averageSnr": 10
   }
 ]
