@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "bucketStart": "2026-08-27T05:05:00.000Z",
+    "bucketEnd": "2026-08-27T05:10:00.000Z",
+    "source": "dxCluster",
+    "band": "12m",
+    "region": "ASIA",
+    "weightedSpotCount": 0.017195681386832435,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
+  }
+]
