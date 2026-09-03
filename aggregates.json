@@ -1,1 +1,35 @@
-[]
+[
+  {
+    "bucketStart": "2026-09-03T05:45:00.000Z",
+    "bucketEnd": "2026-09-03T05:50:00.000Z",
+    "source": "rbn",
+    "band": "17m",
+    "region": "EUROPE",
+    "weightedSpotCount": 2.8987133854556415,
+    "uniqueStationCount": 2,
+    "uniquePathCount": 2,
+    "averageSnr": 10
+  },
+  {
+    "bucketStart": "2026-09-03T05:45:00.000Z",
+    "bucketEnd": "2026-09-03T05:50:00.000Z",
+    "source": "rbn",
+    "band": "15m",
+    "region": "EUROPE",
+    "weightedSpotCount": 1.9324755903037611,
+    "uniqueStationCount": 2,
+    "uniquePathCount": 2,
+    "averageSnr": 11
+  },
+  {
+    "bucketStart": "2026-09-03T05:45:00.000Z",
+    "bucketEnd": "2026-09-03T05:50:00.000Z",
+    "source": "rbn",
+    "band": "12m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.9662377951518806,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1,
+    "averageSnr": 20
+  }
+]
