@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "bucketStart": "2026-09-04T00:35:00.000Z",
+    "bucketEnd": "2026-09-04T00:40:00.000Z",
+    "source": "rbn",
+    "band": "20m",
+    "region": "EUROPE",
+    "weightedSpotCount": 4.831188975759403,
+    "uniqueStationCount": 5,
+    "uniquePathCount": 5,
+    "averageSnr": 17.4
+  }
+]
