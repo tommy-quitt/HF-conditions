@@ -1,53 +1,43 @@
 [
   {
-    "bucketStart": "2026-09-26T13:40:00.000Z",
-    "bucketEnd": "2026-09-26T13:45:00.000Z",
+    "bucketStart": "2026-09-26T17:10:00.000Z",
+    "bucketEnd": "2026-09-26T17:15:00.000Z",
     "source": "dxCluster",
-    "band": "15m",
+    "band": "20m",
+    "region": "NORTH_AMERICA",
+    "weightedSpotCount": 0.7502279571694999,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-09-26T17:15:00.000Z",
+    "bucketEnd": "2026-09-26T17:20:00.000Z",
+    "source": "dxCluster",
+    "band": "30m",
     "region": "EUROPE",
-    "weightedSpotCount": 0.1222418163529809,
-    "uniqueStationCount": 2,
+    "weightedSpotCount": 1.0790244017147204,
+    "uniqueStationCount": 1,
     "uniquePathCount": 2
   },
   {
-    "bucketStart": "2026-09-26T13:40:00.000Z",
-    "bucketEnd": "2026-09-26T13:45:00.000Z",
+    "bucketStart": "2026-09-26T17:20:00.000Z",
+    "bucketEnd": "2026-09-26T17:25:00.000Z",
     "source": "dxCluster",
     "band": "20m",
     "region": "EUROPE",
-    "weightedSpotCount": 1.0409253265127076,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 2
-  },
-  {
-    "bucketStart": "2026-09-26T13:45:00.000Z",
-    "bucketEnd": "2026-09-26T13:50:00.000Z",
-    "source": "dxCluster",
-    "band": "10m",
-    "region": "NORTH_AMERICA",
-    "weightedSpotCount": 0.9899293915009859,
+    "weightedSpotCount": 0.05619217937909057,
     "uniqueStationCount": 1,
     "uniquePathCount": 1
   },
   {
-    "bucketStart": "2026-09-26T13:45:00.000Z",
-    "bucketEnd": "2026-09-26T13:50:00.000Z",
-    "source": "dxCluster",
-    "band": "15m",
-    "region": "EUROPE",
-    "weightedSpotCount": 0.9543255152137713,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1
-  },
-  {
-    "bucketStart": "2026-09-26T13:50:00.000Z",
-    "bucketEnd": "2026-09-26T13:55:00.000Z",
+    "bucketStart": "2026-09-26T17:25:00.000Z",
+    "bucketEnd": "2026-09-26T17:30:00.000Z",
     "source": "rbn",
     "band": "15m",
-    "region": "ASIA",
-    "weightedSpotCount": 1.9324755903037611,
+    "region": "NORTH_AMERICA",
+    "weightedSpotCount": 0.9662377951518806,
     "uniqueStationCount": 1,
     "uniquePathCount": 1,
-    "averageSnr": 18
+    "averageSnr": 9
   }
 ]
