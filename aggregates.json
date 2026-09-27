@@ -1,12 +1,13 @@
 [
   {
-    "bucketStart": "2026-09-27T00:35:00.000Z",
-    "bucketEnd": "2026-09-27T00:40:00.000Z",
-    "source": "dxCluster",
-    "band": "30m",
+    "bucketStart": "2026-09-27T05:45:00.000Z",
+    "bucketEnd": "2026-09-27T05:50:00.000Z",
+    "source": "rbn",
+    "band": "15m",
     "region": "EUROPE",
-    "weightedSpotCount": 0.3215610758483041,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1
+    "weightedSpotCount": 1.9324755903037611,
+    "uniqueStationCount": 2,
+    "uniquePathCount": 2,
+    "averageSnr": 7
   }
 ]
