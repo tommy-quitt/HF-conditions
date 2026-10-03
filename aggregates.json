@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "bucketStart": "2026-10-03T06:10:00.000Z",
+    "bucketEnd": "2026-10-03T06:15:00.000Z",
+    "source": "dxCluster",
+    "band": "20m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.017444253569639818,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-10-03T06:20:00.000Z",
+    "bucketEnd": "2026-10-03T06:25:00.000Z",
+    "source": "dxCluster",
+    "band": "20m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.024831122266232346,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-10-03T06:25:00.000Z",
+    "bucketEnd": "2026-10-03T06:30:00.000Z",
+    "source": "rbn",
+    "band": "20m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.9662377951518806,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1,
+    "averageSnr": 9
+  },
+  {
+    "bucketStart": "2026-10-03T06:25:00.000Z",
+    "bucketEnd": "2026-10-03T06:30:00.000Z",
+    "source": "rbn",
+    "band": "15m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.9662377951518806,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1,
+    "averageSnr": 16
+  }
+]
