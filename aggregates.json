@@ -1,24 +1,67 @@
 [
   {
-    "bucketStart": "2026-10-19T06:05:00.000Z",
-    "bucketEnd": "2026-10-19T06:10:00.000Z",
+    "bucketStart": "2026-10-19T12:55:00.000Z",
+    "bucketEnd": "2026-10-19T13:00:00.000Z",
+    "source": "dxCluster",
+    "band": "10m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.09838574944454277,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-10-19T13:00:00.000Z",
+    "bucketEnd": "2026-10-19T13:05:00.000Z",
+    "source": "rbn",
+    "band": "15m",
+    "region": "EUROPE",
+    "weightedSpotCount": 6.763664566063165,
+    "uniqueStationCount": 7,
+    "uniquePathCount": 7,
+    "averageSnr": 13.714285714285714
+  },
+  {
+    "bucketStart": "2026-10-19T13:00:00.000Z",
+    "bucketEnd": "2026-10-19T13:05:00.000Z",
     "source": "rbn",
     "band": "20m",
     "region": "EUROPE",
-    "weightedSpotCount": 0.9662377951518806,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1,
-    "averageSnr": 8
-  },
-  {
-    "bucketStart": "2026-10-19T06:05:00.000Z",
-    "bucketEnd": "2026-10-19T06:10:00.000Z",
-    "source": "rbn",
-    "band": "15m",
-    "region": "ASIA",
     "weightedSpotCount": 1.9324755903037611,
     "uniqueStationCount": 2,
     "uniquePathCount": 2,
-    "averageSnr": 10
+    "averageSnr": 12.5
+  },
+  {
+    "bucketStart": "2026-10-19T13:00:00.000Z",
+    "bucketEnd": "2026-10-19T13:05:00.000Z",
+    "source": "rbn",
+    "band": "10m",
+    "region": "NORTH_AMERICA",
+    "weightedSpotCount": 2.8987133854556415,
+    "uniqueStationCount": 3,
+    "uniquePathCount": 3,
+    "averageSnr": 17.333333333333332
+  },
+  {
+    "bucketStart": "2026-10-19T13:00:00.000Z",
+    "bucketEnd": "2026-10-19T13:05:00.000Z",
+    "source": "rbn",
+    "band": "10m",
+    "region": "EUROPE",
+    "weightedSpotCount": 42.51446298668276,
+    "uniqueStationCount": 39,
+    "uniquePathCount": 39,
+    "averageSnr": 22.636363636363637
+  },
+  {
+    "bucketStart": "2026-10-19T13:00:00.000Z",
+    "bucketEnd": "2026-10-19T13:05:00.000Z",
+    "source": "rbn",
+    "band": "17m",
+    "region": "EUROPE",
+    "weightedSpotCount": 1.9324755903037611,
+    "uniqueStationCount": 2,
+    "uniquePathCount": 2,
+    "averageSnr": 23.5
   }
 ]
