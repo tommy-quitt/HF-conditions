@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "bucketStart": "2026-10-21T05:25:00.000Z",
+    "bucketEnd": "2026-10-21T05:30:00.000Z",
+    "source": "rbn",
+    "band": "20m",
+    "region": "EUROPE",
+    "weightedSpotCount": 52.17684093820159,
+    "uniqueStationCount": 50,
+    "uniquePathCount": 51,
+    "averageSnr": 16.462962962962962
+  },
+  {
+    "bucketStart": "2026-10-21T05:25:00.000Z",
+    "bucketEnd": "2026-10-21T05:30:00.000Z",
+    "source": "rbn",
+    "band": "20m",
+    "region": "NORTH_AMERICA",
+    "weightedSpotCount": 0.9662377951518806,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1,
+    "averageSnr": 13
+  }
+]
