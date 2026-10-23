@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-23T05:29:27.378Z",
+  "generatedAt": "2026-10-23T10:22:25.894Z",
   "sources": [
     {
       "source": "noaa",
       "status": "connected",
-      "lastObservationAt": "2026-10-23T00:00:00Z",
+      "lastObservationAt": "2026-10-23T06:00:00Z",
       "eventsLastFiveMinutes": 1
     },
     {
@@ -16,14 +16,14 @@
     {
       "source": "dxCluster",
       "status": "connected",
-      "lastObservationAt": "2026-10-23T05:28:47.000Z",
-      "eventsLastFiveMinutes": 14
+      "lastObservationAt": "2026-10-23T10:22:23.000Z",
+      "eventsLastFiveMinutes": 30
     },
     {
       "source": "rbn",
       "status": "connected",
-      "lastObservationAt": "2026-10-23T05:30:00.000Z",
-      "eventsLastFiveMinutes": 155
+      "lastObservationAt": "2026-10-23T10:23:00.000Z",
+      "eventsLastFiveMinutes": 261
     }
   ]
 }
