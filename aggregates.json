@@ -1,52 +1,122 @@
 [
   {
-    "bucketStart": "2026-10-25T01:25:00.000Z",
-    "bucketEnd": "2026-10-25T01:30:00.000Z",
+    "bucketStart": "2026-10-25T06:30:00.000Z",
+    "bucketEnd": "2026-10-25T06:35:00.000Z",
     "source": "dxCluster",
-    "band": "80m",
-    "region": "EUROPE",
-    "weightedSpotCount": 0.017674690892419243,
+    "band": "15m",
+    "region": "ASIA",
+    "weightedSpotCount": 0.04667520038932327,
     "uniqueStationCount": 1,
     "uniquePathCount": 1
   },
   {
-    "bucketStart": "2026-10-25T01:25:00.000Z",
-    "bucketEnd": "2026-10-25T01:30:00.000Z",
+    "bucketStart": "2026-10-25T06:35:00.000Z",
+    "bucketEnd": "2026-10-25T06:40:00.000Z",
     "source": "dxCluster",
-    "band": "40m",
+    "band": "15m",
     "region": "ASIA",
+    "weightedSpotCount": 0.1400256011679698,
+    "uniqueStationCount": 3,
+    "uniquePathCount": 3
+  },
+  {
+    "bucketStart": "2026-10-25T06:35:00.000Z",
+    "bucketEnd": "2026-10-25T06:40:00.000Z",
+    "source": "dxCluster",
+    "band": "10m",
+    "region": "ASIA",
+    "weightedSpotCount": 0.8950532797276763,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-10-25T06:35:00.000Z",
+    "bucketEnd": "2026-10-25T06:40:00.000Z",
+    "source": "dxCluster",
+    "band": "15m",
+    "region": "EUROPE",
     "weightedSpotCount": 0.7502279571694999,
     "uniqueStationCount": 1,
     "uniquePathCount": 1
   },
   {
-    "bucketStart": "2026-10-25T01:25:00.000Z",
-    "bucketEnd": "2026-10-25T01:30:00.000Z",
+    "bucketStart": "2026-10-25T06:35:00.000Z",
+    "bucketEnd": "2026-10-25T06:40:00.000Z",
+    "source": "dxCluster",
+    "band": "10m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.527066770397166,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-10-25T06:40:00.000Z",
+    "bucketEnd": "2026-10-25T06:45:00.000Z",
     "source": "dxCluster",
     "band": "20m",
     "region": "EUROPE",
-    "weightedSpotCount": 0.05122714452124699,
+    "weightedSpotCount": 1.7609875282235057,
+    "uniqueStationCount": 4,
+    "uniquePathCount": 4
+  },
+  {
+    "bucketStart": "2026-10-25T06:40:00.000Z",
+    "bucketEnd": "2026-10-25T06:45:00.000Z",
+    "source": "dxCluster",
+    "band": "10m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.527066770397166,
     "uniqueStationCount": 1,
     "uniquePathCount": 1
   },
   {
-    "bucketStart": "2026-10-25T01:25:00.000Z",
-    "bucketEnd": "2026-10-25T01:30:00.000Z",
+    "bucketStart": "2026-10-25T06:40:00.000Z",
+    "bucketEnd": "2026-10-25T06:45:00.000Z",
     "source": "dxCluster",
-    "band": "40m",
-    "region": "NORTH_AMERICA",
+    "band": "15m",
+    "region": "ASIA",
+    "weightedSpotCount": 0.7969031575588231,
+    "uniqueStationCount": 2,
+    "uniquePathCount": 2
+  },
+  {
+    "bucketStart": "2026-10-25T06:40:00.000Z",
+    "bucketEnd": "2026-10-25T06:45:00.000Z",
+    "source": "dxCluster",
+    "band": "15m",
+    "region": "EUROPE",
     "weightedSpotCount": 0.7502279571694999,
     "uniqueStationCount": 1,
     "uniquePathCount": 1
   },
   {
-    "bucketStart": "2026-10-25T01:25:00.000Z",
-    "bucketEnd": "2026-10-25T01:30:00.000Z",
+    "bucketStart": "2026-10-25T06:45:00.000Z",
+    "bucketEnd": "2026-10-25T06:50:00.000Z",
     "source": "dxCluster",
-    "band": "40m",
+    "band": "10m",
     "region": "EUROPE",
-    "weightedSpotCount": 0.07200415515730643,
+    "weightedSpotCount": 0.8452487962087879,
+    "uniqueStationCount": 2,
+    "uniquePathCount": 2
+  },
+  {
+    "bucketStart": "2026-10-25T06:45:00.000Z",
+    "bucketEnd": "2026-10-25T06:50:00.000Z",
+    "source": "dxCluster",
+    "band": "15m",
+    "region": "ASIA",
+    "weightedSpotCount": 0.04667520038932327,
     "uniqueStationCount": 1,
     "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-10-25T06:45:00.000Z",
+    "bucketEnd": "2026-10-25T06:50:00.000Z",
+    "source": "dxCluster",
+    "band": "20m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.8099071320740412,
+    "uniqueStationCount": 2,
+    "uniquePathCount": 2
   }
 ]
