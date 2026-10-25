@@ -1,122 +1,102 @@
 [
   {
-    "bucketStart": "2026-10-25T06:30:00.000Z",
-    "bucketEnd": "2026-10-25T06:35:00.000Z",
+    "bucketStart": "2026-10-25T11:55:00.000Z",
+    "bucketEnd": "2026-10-25T12:00:00.000Z",
     "source": "dxCluster",
-    "band": "15m",
-    "region": "ASIA",
-    "weightedSpotCount": 0.04667520038932327,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1
-  },
-  {
-    "bucketStart": "2026-10-25T06:35:00.000Z",
-    "bucketEnd": "2026-10-25T06:40:00.000Z",
-    "source": "dxCluster",
-    "band": "15m",
-    "region": "ASIA",
-    "weightedSpotCount": 0.1400256011679698,
+    "band": "20m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.11612981038518255,
     "uniqueStationCount": 3,
     "uniquePathCount": 3
   },
   {
-    "bucketStart": "2026-10-25T06:35:00.000Z",
-    "bucketEnd": "2026-10-25T06:40:00.000Z",
+    "bucketStart": "2026-10-25T11:55:00.000Z",
+    "bucketEnd": "2026-10-25T12:00:00.000Z",
     "source": "dxCluster",
-    "band": "10m",
-    "region": "ASIA",
-    "weightedSpotCount": 0.8950532797276763,
+    "band": "17m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.026129261966848262,
     "uniqueStationCount": 1,
     "uniquePathCount": 1
   },
   {
-    "bucketStart": "2026-10-25T06:35:00.000Z",
-    "bucketEnd": "2026-10-25T06:40:00.000Z",
+    "bucketStart": "2026-10-25T11:55:00.000Z",
+    "bucketEnd": "2026-10-25T12:00:00.000Z",
+    "source": "dxCluster",
+    "band": "10m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.05312120209614994,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-10-25T12:00:00.000Z",
+    "bucketEnd": "2026-10-25T12:05:00.000Z",
     "source": "dxCluster",
     "band": "15m",
     "region": "EUROPE",
-    "weightedSpotCount": 0.7502279571694999,
+    "weightedSpotCount": 0.05619217937909057,
     "uniqueStationCount": 1,
     "uniquePathCount": 1
   },
   {
-    "bucketStart": "2026-10-25T06:35:00.000Z",
-    "bucketEnd": "2026-10-25T06:40:00.000Z",
+    "bucketStart": "2026-10-25T12:00:00.000Z",
+    "bucketEnd": "2026-10-25T12:05:00.000Z",
     "source": "dxCluster",
     "band": "10m",
     "region": "EUROPE",
-    "weightedSpotCount": 0.527066770397166,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1
-  },
-  {
-    "bucketStart": "2026-10-25T06:40:00.000Z",
-    "bucketEnd": "2026-10-25T06:45:00.000Z",
-    "source": "dxCluster",
-    "band": "20m",
-    "region": "EUROPE",
-    "weightedSpotCount": 1.7609875282235057,
-    "uniqueStationCount": 4,
+    "weightedSpotCount": 2.746690305702878,
+    "uniqueStationCount": 3,
     "uniquePathCount": 4
   },
   {
-    "bucketStart": "2026-10-25T06:40:00.000Z",
-    "bucketEnd": "2026-10-25T06:45:00.000Z",
-    "source": "dxCluster",
-    "band": "10m",
-    "region": "EUROPE",
-    "weightedSpotCount": 0.527066770397166,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1
-  },
-  {
-    "bucketStart": "2026-10-25T06:40:00.000Z",
-    "bucketEnd": "2026-10-25T06:45:00.000Z",
-    "source": "dxCluster",
-    "band": "15m",
-    "region": "ASIA",
-    "weightedSpotCount": 0.7969031575588231,
-    "uniqueStationCount": 2,
-    "uniquePathCount": 2
-  },
-  {
-    "bucketStart": "2026-10-25T06:40:00.000Z",
-    "bucketEnd": "2026-10-25T06:45:00.000Z",
-    "source": "dxCluster",
-    "band": "15m",
-    "region": "EUROPE",
-    "weightedSpotCount": 0.7502279571694999,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1
-  },
-  {
-    "bucketStart": "2026-10-25T06:45:00.000Z",
-    "bucketEnd": "2026-10-25T06:50:00.000Z",
-    "source": "dxCluster",
-    "band": "10m",
-    "region": "EUROPE",
-    "weightedSpotCount": 0.8452487962087879,
-    "uniqueStationCount": 2,
-    "uniquePathCount": 2
-  },
-  {
-    "bucketStart": "2026-10-25T06:45:00.000Z",
-    "bucketEnd": "2026-10-25T06:50:00.000Z",
-    "source": "dxCluster",
-    "band": "15m",
-    "region": "ASIA",
-    "weightedSpotCount": 0.04667520038932327,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1
-  },
-  {
-    "bucketStart": "2026-10-25T06:45:00.000Z",
-    "bucketEnd": "2026-10-25T06:50:00.000Z",
+    "bucketStart": "2026-10-25T12:00:00.000Z",
+    "bucketEnd": "2026-10-25T12:05:00.000Z",
     "source": "dxCluster",
     "band": "20m",
     "region": "EUROPE",
-    "weightedSpotCount": 0.8099071320740412,
+    "weightedSpotCount": 0.05302407267725773,
+    "uniqueStationCount": 3,
+    "uniquePathCount": 3
+  },
+  {
+    "bucketStart": "2026-10-25T12:00:00.000Z",
+    "bucketEnd": "2026-10-25T12:05:00.000Z",
+    "source": "dxCluster",
+    "band": "15m",
+    "region": "NORTH_AMERICA",
+    "weightedSpotCount": 0.2520795835012115,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 2
+  },
+  {
+    "bucketStart": "2026-10-25T12:05:00.000Z",
+    "bucketEnd": "2026-10-25T12:10:00.000Z",
+    "source": "dxCluster",
+    "band": "15m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.20085243897996455,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
+  },
+  {
+    "bucketStart": "2026-10-25T12:05:00.000Z",
+    "bucketEnd": "2026-10-25T12:10:00.000Z",
+    "source": "dxCluster",
+    "band": "20m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.04412565522787613,
     "uniqueStationCount": 2,
     "uniquePathCount": 2
+  },
+  {
+    "bucketStart": "2026-10-25T12:05:00.000Z",
+    "bucketEnd": "2026-10-25T12:10:00.000Z",
+    "source": "dxCluster",
+    "band": "10m",
+    "region": "EUROPE",
+    "weightedSpotCount": 0.9969149946382291,
+    "uniqueStationCount": 1,
+    "uniquePathCount": 1
   }
 ]
