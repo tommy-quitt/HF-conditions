@@ -1,21 +1,21 @@
 [
   {
-    "bucketStart": "2026-11-04T10:35:00.000Z",
-    "bucketEnd": "2026-11-04T10:40:00.000Z",
+    "bucketStart": "2026-11-04T18:00:00.000Z",
+    "bucketEnd": "2026-11-04T18:05:00.000Z",
     "source": "dxCluster",
-    "band": "20m",
+    "band": "30m",
     "region": "EUROPE",
     "weightedSpotCount": 0.041991928718958516,
     "uniqueStationCount": 1,
     "uniquePathCount": 1
   },
   {
-    "bucketStart": "2026-11-04T10:45:00.000Z",
-    "bucketEnd": "2026-11-04T10:50:00.000Z",
+    "bucketStart": "2026-11-04T18:05:00.000Z",
+    "bucketEnd": "2026-11-04T18:10:00.000Z",
     "source": "dxCluster",
-    "band": "10m",
+    "band": "40m",
     "region": "EUROPE",
-    "weightedSpotCount": 0.02199128365951087,
+    "weightedSpotCount": 0.1361793483361341,
     "uniqueStationCount": 1,
     "uniquePathCount": 1
   }
