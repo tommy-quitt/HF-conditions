@@ -1,41 +1,11 @@
 [
   {
-    "bucketStart": "2026-11-11T17:45:00.000Z",
-    "bucketEnd": "2026-11-11T17:50:00.000Z",
+    "bucketStart": "2026-11-11T23:50:00.000Z",
+    "bucketEnd": "2026-11-11T23:55:00.000Z",
     "source": "dxCluster",
-    "band": "40m",
+    "band": "80m",
     "region": "EUROPE",
-    "weightedSpotCount": 0.1361793483361341,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1
-  },
-  {
-    "bucketStart": "2026-11-11T17:50:00.000Z",
-    "bucketEnd": "2026-11-11T17:55:00.000Z",
-    "source": "dxCluster",
-    "band": "30m",
-    "region": "EUROPE",
-    "weightedSpotCount": 0.22908807229377254,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1
-  },
-  {
-    "bucketStart": "2026-11-11T17:50:00.000Z",
-    "bucketEnd": "2026-11-11T17:55:00.000Z",
-    "source": "dxCluster",
-    "band": "40m",
-    "region": "EUROPE",
-    "weightedSpotCount": 0.041991928718958516,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1
-  },
-  {
-    "bucketStart": "2026-11-11T17:55:00.000Z",
-    "bucketEnd": "2026-11-11T18:00:00.000Z",
-    "source": "dxCluster",
-    "band": "40m",
-    "region": "EUROPE",
-    "weightedSpotCount": 0.1361793483361341,
+    "weightedSpotCount": 0.07200415515730643,
     "uniqueStationCount": 1,
     "uniquePathCount": 1
   }
