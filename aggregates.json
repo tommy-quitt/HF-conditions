@@ -1,34 +1,54 @@
 [
   {
-    "bucketStart": "2026-11-12T04:15:00.000Z",
-    "bucketEnd": "2026-11-12T04:20:00.000Z",
+    "bucketStart": "2026-11-12T12:50:00.000Z",
+    "bucketEnd": "2026-11-12T12:55:00.000Z",
     "source": "dxCluster",
-    "band": "30m",
+    "band": "15m",
     "region": "EUROPE",
-    "weightedSpotCount": 0.20085243897996455,
+    "weightedSpotCount": 0.08398385743791703,
+    "uniqueStationCount": 2,
+    "uniquePathCount": 2
+  },
+  {
+    "bucketStart": "2026-11-12T13:00:00.000Z",
+    "bucketEnd": "2026-11-12T13:05:00.000Z",
+    "source": "dxCluster",
+    "band": "15m",
+    "region": "NORTH_AMERICA",
+    "weightedSpotCount": 0.041991928718958516,
     "uniqueStationCount": 1,
     "uniquePathCount": 1
   },
   {
-    "bucketStart": "2026-11-12T04:25:00.000Z",
-    "bucketEnd": "2026-11-12T04:30:00.000Z",
-    "source": "rbn",
-    "band": "17m",
-    "region": "EUROPE",
-    "weightedSpotCount": 0.9662377951518806,
+    "bucketStart": "2026-11-12T13:00:00.000Z",
+    "bucketEnd": "2026-11-12T13:05:00.000Z",
+    "source": "dxCluster",
+    "band": "15m",
+    "region": "ASIA",
+    "weightedSpotCount": 0.041991928718958516,
     "uniqueStationCount": 1,
-    "uniquePathCount": 1,
-    "averageSnr": 16
+    "uniquePathCount": 1
   },
   {
-    "bucketStart": "2026-11-12T04:25:00.000Z",
-    "bucketEnd": "2026-11-12T04:30:00.000Z",
+    "bucketStart": "2026-11-12T13:00:00.000Z",
+    "bucketEnd": "2026-11-12T13:05:00.000Z",
+    "source": "rbn",
+    "band": "15m",
+    "region": "NORTH_AMERICA",
+    "weightedSpotCount": 2.8987133854556415,
+    "uniqueStationCount": 2,
+    "uniquePathCount": 2,
+    "averageSnr": 6.333333333333333
+  },
+  {
+    "bucketStart": "2026-11-12T13:00:00.000Z",
+    "bucketEnd": "2026-11-12T13:05:00.000Z",
     "source": "rbn",
     "band": "12m",
-    "region": "ASIA",
-    "weightedSpotCount": 0.9662377951518806,
-    "uniqueStationCount": 1,
-    "uniquePathCount": 1,
-    "averageSnr": 7
+    "region": "EUROPE",
+    "weightedSpotCount": 3.8649511806075223,
+    "uniqueStationCount": 4,
+    "uniquePathCount": 4,
+    "averageSnr": 15.25
   }
 ]
